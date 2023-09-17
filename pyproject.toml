@@ -9,7 +9,9 @@ python = "^3.10"
 fastapi = "^0.98.0"
 uvicorn = "^0.22.0"
 alembic = "^1.11.1"
-sqlalchemy = "^2.0.16"
+psycopg2-binary = "^2.9.7"
+ormar = "^0.12.2"
+asyncpg = "^0.28.0"
 
 [tool.poetry.dev-dependencies]
 
