@@ -1,9 +1,23 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
-from app.db import database, User
+from app.db import User, database
 
 app = FastAPI(title="Tom.Camp")
 
+origins = [
+    "http://tcapi.localhost",
+    "https://tcapi.localhost",
+    "http://tcapi.localhost:8008",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/")
